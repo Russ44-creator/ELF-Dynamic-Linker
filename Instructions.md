@@ -157,7 +157,7 @@ So, to pinpoint the segments, we need to find **program header table**,
 which stores the information we see in `readelf -l`.
 So called **program header** is actually an abstract of a segment, containing
 information shown in the fields of `Elf64_Phdr`.
-
+ 
 First, we need to find out the *ELF header*, or `Elf64_Ehdr` above.
 It always starts at offset 0 of an ELF file, so use `read()`, `fread()`, or `pread()`
 to read `sizeof(Elf64_Ehdr)` number of bytes can find that.
